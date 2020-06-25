@@ -16,8 +16,19 @@ function vowels(word){
   console.log(vowels('the course is getting hard'))
 
   challengeBanner(2)
-
-
+  function firstFiveVowels(str){
+      const vowels = 'aeiou';
+      let count = 0;
+      let i = 0;
+      while(i < str.length){
+          if(vowels.includes(str[i])&& count < 5){
+              console.log(str[i])
+              count = count +1
+          }
+          i = i + 1;
+      }
+  }
+console.log(firstFiveVowels('Regular expressions are for term 2.'))
 
 
 
