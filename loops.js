@@ -3,80 +3,109 @@ function challengeBanner(n){
 }
 
 challengeBanner(1)
-
-function vowels(word){
-    let letter = 0
-      while(letter <= word.length){
-        if(word[letter] === 'a'|| word[letter] === 'e'|| word[letter] === 'i' || word[letter] === 'o' || word[letter] === 'u'){
-          console.log(word[letter])
-        }
-        letter++;
-      }
+function voweled(arr){
+  let vowels = 'aeiou';
+  let i = 0;
+  while(i < arr.length){
+    if(vowels.includes(arr[i])) {
+      console.log(arr[i]);
+    }
+    i++
   }
-  console.log(vowels('the course is getting hard'))
-
+  }
+  
+  console.log(voweled("Regular expressions are for term 2."))
+  
   challengeBanner(2)
-  function firstFiveVowels(str){
-      const vowels = 'aeiou';
-      let count = 0;
-      let i = 0;
-      while(i < str.length){
-          if(vowels.includes(str[i])&& count < 5){
-              console.log(str[i])
-              count = count +1
-          }
-          i = i + 1;
+
+  function first5Vowels(arr){
+    let vowels = 'aeiou';
+    let i = 0;
+    let count = 0;
+    while(i < arr.length && count < 5){
+      if(vowels.includes(arr[i])) {
+        console.log(arr[i]);
+        count++
       }
-  }
-console.log(firstFiveVowels('Regular expressions are for term 2.'))
-
-
+      i++
+    }
+    }
+    
+    console.log(first5Vowels("Regular expressions are for term 2."))
+    
+ 
 
   challengeBanner(3)
-
-  function thirdLetters(word){
-    let length = word.length;
-    let start = 2;
-      while(start < length){
-        console.log(word[start]);
-        start = start + 3
-      }
+  function everyThird(str){
+    let i = 0;
+    while(i < str.length){
+      console.log(str[i])
+      i = i + 3;
+    }
   }
-  console.log (thirdLetters('I am the alfalfa and the omelette.'))
 
+  console.log(everyThird('I am the alfalfa and the omelette.'))
 
 challengeBanner(4)
 
-function fourAfter(word, start){
-    let end = start + 4
-    let beginning = start + 0 
-    while(beginning < end){
-      console.log(word[beginning]);
-      beginning = beginning + 1;
+function first4After(str, start){
+  let count = 0;
+  let i = start;
+  while(i < str.length) {
+    if(count < 4){
+      console.log(str[i])
+      count++
     }
+    i++
   }
-  
-
-  console.log(fourAfter(`Oh hi, I didn't see you there. Welcome.`, 36))
-
-
-
-
-
-
-
-
+}
+console.log(first4After(`Oh hi, I didn't see you there. Welcome.`, 4))
+console.log(first4After(`Oh hi, I didn't see you there. Welcome.`, 36))
 challengeBanner(5)
 
-function uu(word){
-    let start = 0;
-    let character = word[start]
-    let end = word.length;
-    while(start < end){
-      if(character.includes('u') === true){
-        console.log(character)
-      }
-      start++;
+function everyU(str){
+  let i = 0
+  while(i < str.length) {
+    if(str[i] === 'u'){
+    console.log(i);
     }
+    i++
   }
-  
+  }
+
+console.log(everyU(`You picked the wrong house, bub.`))
+
+
+
+
+challengeBanner(6)
+function firstU(str){
+  let i = 0
+  while(i < str.length) {
+    if(str[i] === 'u'){
+    console.log(i);
+    return
+    }
+    i++
+  }
+  }
+  console.log(firstU(`You picked the wrong house, bub.`))
+challengeBanner(7)
+
+function UdontExist(str){
+  let i = 0
+  let found = false;
+  while(i < str.length) {
+    if(str[i] === 'u' && found === false){
+      console.log(i)
+      found = true;
+    }
+    i++
+  }
+  if(found === false){
+    return -1
+  }
+}
+
+console.log(UdontExist(`You picked the wrong house, bub.`))
+console.log(UdontExist(`I am Canadian`))
